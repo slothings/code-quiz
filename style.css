@@ -1,11 +1,10 @@
-/* Page Title Style */
+/* CSS */
 
-h1 {
+  h1 {
+    text-align: center;
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 1000;
   }
-
-  /* Button Style */
 
   button {
     padding: 10px;
@@ -14,6 +13,16 @@ h1 {
     font-size: 25px;
   }
 
-  .container {
+  .questionDiv {
     text-align: center;
+  }
+
+  .highscoreDiv {
+    text-align: center;
+  }
+  
+  .timerDiv {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
   }

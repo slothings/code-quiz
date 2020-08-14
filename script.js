@@ -67,5 +67,29 @@ var timer = document.getElementById("startTime");
 
 var currentTime = document.getElementById("currentTime");
 
+var questionDiv = document.getElementById("questionDiv");
+
+var secondsLeft = 10;
+
+var counter = 0;
+
+// Timer function
+
+timer.addEventListener("click", function () {
+
+    if (counter === 0) {
+        counter = setInterval(function() {
+            secondsLeft--;
+            currentTime.textContent = secondsLeft;
+
+            if (secondsLeft <= 0) {
+                clearInterval(counter);
+                currentTime.textContent = "Game Over!";
+                console.log("counter");
+            }
+        }, 1000);
+    }
+});
+
 
 

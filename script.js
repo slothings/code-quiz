@@ -38,8 +38,6 @@ var score = 0;
 
 var questionIndex = 0;
 
-var penalty = 5;
-
 var timer = document.getElementById("startTime");
 
 var currentTime = document.getElementById("currentTime");
@@ -106,6 +104,8 @@ function showQuestions(questionIndex) {
 
 // Event to compare choice with user answers
 
+var penalty = 10;
+
 function compareQuestions(event) {
     var choice = event.target;
 
@@ -131,7 +131,7 @@ function compareQuestions(event) {
 
     if (questionIndex >= questions.length) {
         finished();
-        createDiv.textContent = "Game Finished!";
+        createDiv.textContent = "Quiz Finished!";
     }
     else {
         showQuestions(questionIndex);
@@ -204,7 +204,7 @@ function finished() {
         var name = createInput.value;
 
         if (name === null) {
-            console.log("No name entered!");
+            console.log("No name entered");
         }
         else {
             var finalScore = {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +12,30 @@
 
     <h1>High Scores</h1>
 
-    <div id="questionDiv">
+    <div class="questionContainer">
+
+        <!-- List of scores -->
+
+        <ul id="highScore">
+
+        </ul>
+
+        <!-- Buttons -->
+
+        <button id="retake">Retake Quiz</button>
+
+        <button id="clear" value="reset">Clear High Scores</button>
 
     </div>
 
-    <!-- Buttons -->
+    <div class="highscoreContainer">
 
-    <button id="retake">Retake Quiz</button>
+        <a href="index.html">Home</a>
 
-    <button id="clear" value="reset">Clear High Scores</button>
-    
+    </div>
+
+    <script src="./highscores.js"></script>
+
 </body>
+
 </html>

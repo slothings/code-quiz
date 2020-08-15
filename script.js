@@ -3,57 +3,32 @@
 var questions = [
     {
         question: "Inside which HTML element do we put the JavaScript?",
-        answers: {
-            a: "<scripting>",
-            b: "<script>",
-            c: "<javascript>",
-            d: "<js>"
-        },
-        correctAnswer: "b"
+        answers: ["<scripting>", "<script>", "<javascript>", "<js>"],
+        correctAnswer: "<script>"
     },
 
     {
         question: "Which built-in method returns the length of the string?",
-        answers: {
-            a: "length()",
-            b: "size()",
-            c: "index()",
-            d: "None of the above"
-        },
-        correctAnswer: "a"
+        answers: ["length()", "size()", "index()", "None of the above"],
+        correctAnswer: "length()"
     },
 
     {
         question: "Which of the following type of variable is visible everywhere in your Javascript Code?",
-        answers: {
-            a: "global variable",
-            b: "local variable",
-            c: "Both of the above",
-            d: "None of the above"
-        },
-        correctAnswer: "a"
+        answers: ["global variable", "local variable", "Both of the above", "None of the above"],
+        correctAnswer: "global variable"
     },
 
     {
         question: "Which of the following function of Boolean object returns the primitive value of the Boolean object?",
-        answers: {
-            a: "toSource()",
-            b: "valueOf()",
-            c: "toString()",
-            d: "None of the above"
-        },
-        correctAnswer: "b"
+        answers: ["toSource()", "valueOf()", "toString()", "None of the above"],
+        correctAnswer: "valueOf()"
     },
 
     {
         question: "Which of the following function of Array object joins all elements of an array into a string?",
-        answers: {
-            a: "concat()",
-            b: "join()",
-            c: "pop()",
-            d: "map()"
-        },
-        correctAnswer: "b"
+        answers: ["concat()", "join()", "pop()", "map()"],
+        correctAnswer: "join()"
     }
 ];
 
@@ -73,7 +48,7 @@ var questionDiv = document.getElementById("questionDiv");
 
 // Timer function
 
-var secondsLeft = 11;
+var secondsLeft = 101;
 
 var counter = 0;
 
@@ -116,8 +91,6 @@ function showQuestions(questionIndex) {
         var userAnswer = questions[questionIndex].answers;
         questionDiv.textContent = userQuestion;
 
-        console.log(userQuestion);
-
     }
 
     userAnswer.forEach(function (newQuestion) {
@@ -138,7 +111,7 @@ function compareQuestions(event) {
 
     if (choice.matches("li")) {
 
-        var createDiv = Document.createElement("div");
+        var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
 
         if (choice.textContent == questions[questionIndex].correctAnswer) {

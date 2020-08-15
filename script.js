@@ -198,7 +198,62 @@ function finished() {
         questionDiv.appendChild(createScore);
     }
 
-    
+    // Create label
 
+    var createLabel = document.createElement("label");
+    createLabel.setAttribute("id", "createLabel");
+    createLabel.textContent = "Enter your name: ";
+
+    questionDiv.appendChild(createLabel);
+
+    // Create input
+
+    var createInput = document.createElement("input");
+    createInput.setAttribute("type", "text");
+    createInput.setAttribute("id", "name");
+    createInput.textContent = "";
+
+    questionDiv.appendChild(createInput);
+
+    // Create submit
+
+    var createSubmit = document.createElement("button");
+    createSubmit.setAttribute("type", "submit");
+    createSubmit.setAttribute("id", "submit");
+    createSubmit.textContent = "Submit";
+
+    questionDiv.appendChild(createSubmit);
+
+    // Event listener for name, local storage, and scores
+
+    createSubmit.addEventListener("click", function () {
+
+        var name = createInput.value;
+
+        if (name === null) {
+            console.log("No name entered!");
+        }
+        else {
+            var finalScore = {
+                name: name,
+                score: secondsRemaining
+            }
+            console.log(finalScore);
+
+            var allScores = localStorage.getItem("allScores");
+            if (allScores === null) {
+                allScores = [];
+            }
+            else {
+                allScores = JSON.parse(allScores);
+            }
+            allScores.push(finalScore);
+
+            var newScore = JSON.stringify(allScores);
+            localStorage.setItem("allScores", newScore);
+
+            window.location.replace("./highscores.html");
+        }
+    });
 
 }

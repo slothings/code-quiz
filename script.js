@@ -1,4 +1,4 @@
-// Making questions and got my questions from https://www.tutorialspoint.com/javascript/javascript_online_quiz.htm
+// Question variable, got my questions from https://www.tutorialspoint.com/javascript/javascript_online_quiz.htm
 
 var questions = [
     {
@@ -63,33 +63,142 @@ var score = 0;
 
 var questionIndex = 0;
 
+var penalty = 5;
+
 var timer = document.getElementById("startTime");
 
 var currentTime = document.getElementById("currentTime");
 
 var questionDiv = document.getElementById("questionDiv");
 
-var secondsLeft = 10;
+// Timer function
+
+var secondsLeft = 11;
 
 var counter = 0;
-
-// Timer function
 
 timer.addEventListener("click", function () {
 
     if (counter === 0) {
-        counter = setInterval(function() {
+        counter = setInterval(function () {
             secondsLeft--;
             currentTime.textContent = secondsLeft;
 
             if (secondsLeft <= 0) {
                 clearInterval(counter);
                 currentTime.textContent = "Game Over!";
-                console.log("counter");
             }
+
+            console.log(secondsLeft);
+
         }, 1000);
     }
+
+    showQuestions(questionIndex);
+
 });
 
+// Question function
+
+var createUl = document.createElement("ul");
+
+// Displays question and answers
+
+function showQuestions(questionIndex) {
+
+    questionDiv.innerHTML = "";
+
+    createUl.innerHTML = "";
+
+    for (var i = 0; i < questions.length; i++) {
+
+        var userQuestion = questions[questionIndex].question;
+        var userAnswer = questions[questionIndex].answers;
+        questionDiv.textContent = userQuestion;
+
+        console.log(userQuestion);
+
+    }
+
+    userAnswer.forEach(function (newQuestion) {
+
+        var listQuestion = document.createElement("li");
+        listQuestion.textContent = newQuestion;
+        questionDiv.appendChild(createUl);
+        createUl.appendChild(listQuestion);
+        listQuestion.addEventListener("click", (compareQuestions));
+    })
+
+}
+
+// Event to compare choice with user answers
+
+function compareQuestions(event) {
+    var choice = event.target;
+
+    if (choice.matches("li")) {
+
+        var createDiv = Document.createElement("div");
+        createDiv.setAttribute("id", "createDiv");
+
+        if (choice.textContent == questions[questionIndex].correctAnswer) {
+            score++;
+            createDiv.textContent = "Correct!";
+        }
+
+        else {
+            secondsLeft = secondsLeft - penalty;
+            createDiv.textContent = "Incorrect!"
+        }
+    }
+
+    // Determines what question the user is on
+
+    questionIndex++;
+
+    if (questionIndex >= questions.length) {
+        finished();
+        createDiv.textContent = "Game Finished!";
+    }
+    else {
+        showQuestions(questionIndex);
+    }
+    questionDiv.appendChild(createDiv);
+}
+
+// Finished will append high score
+
+function finished() {
+    questionDiv.innerHTML = "";
+    currentTime.innerHTML = "";
+
+    // Create header
+
+    var createH1 = document.createElement("h1");
+    createH1.setAttribute("id", "createH1");
+    createH1.textContent = "Finished!"
+
+    questionDiv.appendChild(createH1);
+
+    // Create Paragraph
+
+    var createP = document.createElement("p");
+    createP.setAttribute("id", "createP");
+
+    questionDiv.appendChild(createP);
+
+    // Create high score
+
+    if (secondsLeft >= 0) {
+        var secondsRemaining = secondsLeft;
+        var createScore = document.createElement("p");
+        clearInterval(counter);
+        createP.textContent = "Final Score: " + secondsRemaining;
+
+        questionDiv.appendChild(createScore);
+    }
+
+    
 
 
+}

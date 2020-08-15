@@ -225,7 +225,7 @@ function finished() {
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
 
-            // window.location.replace("./highscores.html");
+            window.location.replace("./highscores.html");
         }
     });
 

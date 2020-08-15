@@ -1,11 +1,6 @@
 // Question variable, got my questions from https://www.tutorialspoint.com/javascript/javascript_online_quiz.htm
 
 var questions = [
-    {
-        question: "Inside which HTML element do we put the JavaScript?",
-        answers: ["<scripting>", "<script>", "<javascript>", "<js>"],
-        correctAnswer: "<script>"
-    },
 
     {
         question: "Which built-in method returns the length of the string?",
@@ -14,9 +9,9 @@ var questions = [
     },
 
     {
-        question: "Which of the following type of variable is visible everywhere in your Javascript Code?",
-        answers: ["global variable", "local variable", "Both of the above", "None of the above"],
-        correctAnswer: "global variable"
+        question: "Inside which HTML element do we put the JavaScript?",
+        answers: ["<scripting>", "<script>", "<javascript>", "<js>"],
+        correctAnswer: "<script>"
     },
 
     {
@@ -26,10 +21,17 @@ var questions = [
     },
 
     {
+        question: "Which of the following type of variable is visible everywhere in your Javascript Code?",
+        answers: ["global variable", "local variable", "Both of the above", "None of the above"],
+        correctAnswer: "global variable"
+    },
+    
+    {
         question: "Which of the following function of Array object joins all elements of an array into a string?",
         answers: ["concat()", "join()", "pop()", "map()"],
         correctAnswer: "join()"
-    }
+    },
+           
 ];
 
 // Declaring variables

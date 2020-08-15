@@ -48,7 +48,7 @@ var questionDiv = document.getElementById("questionDiv");
 
 // Timer function
 
-var secondsLeft = 101;
+var secondsLeft = 51;
 
 var counter = 0;
 
@@ -121,7 +121,7 @@ function compareQuestions(event) {
 
         else {
             secondsLeft = secondsLeft - penalty;
-            createDiv.textContent = "Incorrect!"
+            createDiv.textContent = "Incorrect! The correct answer is: " + questions[questionIndex].correctAnswer;
         }
     }
 
@@ -147,11 +147,11 @@ function finished() {
 
     // Create header
 
-    var createH1 = document.createElement("h1");
-    createH1.setAttribute("id", "createH1");
-    createH1.textContent = "Finished!"
+    var createH2 = document.createElement("h2");
+    createH2.setAttribute("id", "createH2");
+    createH2.textContent = "Finished!"
 
-    questionDiv.appendChild(createH1);
+    questionDiv.appendChild(createH2);
 
     // Create Paragraph
 
@@ -225,7 +225,7 @@ function finished() {
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
 
-            window.location.replace("./highscores.html");
+            // window.location.replace("./highscores.html");
         }
     });
 

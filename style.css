@@ -15,7 +15,15 @@
   p {
     text-align: center;
     font-size: 25px;
-    font-weight: 1000;
+    font-weight: 500;
+  }
+
+  label {
+    margin: 10px;
+  }
+
+  #submit {
+    margin: 10px;
   }
 
   li {
@@ -28,6 +36,11 @@
     text-decoration: none;
     color: white;
     display: block;
+  }
+
+  div {
+    padding: 10px;
+    font-weight: 500;
   }
 
   button {

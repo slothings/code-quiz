@@ -25,13 +25,13 @@ var questions = [
         answers: ["global variable", "local variable", "Both of the above", "None of the above"],
         correctAnswer: "global variable"
     },
-    
+
     {
         question: "Which of the following function of Array object joins all elements of an array into a string?",
         answers: ["concat()", "join()", "pop()", "map()"],
         correctAnswer: "join()"
     },
-           
+
 ];
 
 // Declaring variables
@@ -63,8 +63,6 @@ timer.addEventListener("click", function () {
                 clearInterval(counter);
                 currentTime.textContent = "Game Over!";
             }
-
-            console.log(secondsLeft);
 
         }, 1000);
     }
@@ -164,8 +162,9 @@ function finished() {
 
     // Create high score
 
+    var secondsRemaining = secondsLeft;
+
     if (secondsLeft >= 0) {
-        var secondsRemaining = secondsLeft;
         var createScore = document.createElement("p");
         clearInterval(counter);
         createP.textContent = "Final Score: " + secondsRemaining;
@@ -186,6 +185,7 @@ function finished() {
     var createInput = document.createElement("input");
     createInput.setAttribute("type", "text");
     createInput.setAttribute("id", "name");
+    createInput.setAttribute("required", "");
     createInput.textContent = "";
 
     questionDiv.appendChild(createInput);
@@ -205,10 +205,13 @@ function finished() {
 
         var name = createInput.value;
 
-        if (name === null) {
-            console.log("No name entered");
+        if (name === "") {
+            alert("Please enter your name!");
         }
         else {
+            if (secondsRemaining < 0) {
+                secondsRemaining = 0;
+            }
             var finalScore = {
                 name: name,
                 score: secondsRemaining

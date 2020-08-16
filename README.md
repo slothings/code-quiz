@@ -1,6 +1,6 @@
 # Code Quiz
 
-![GitHub top language](https://img.shields.io/github/languages/top/slothings/responsive-portfolio)
+![GitHub top language](https://img.shields.io/github/languages/top/slothings/code-quiz)
 
 Code Quiz is a repository where I created a simple quiz using DOM manipulation. 
 

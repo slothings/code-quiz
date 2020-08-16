@@ -1,4 +1,4 @@
-# Code-Quiz
+# Code Quiz
 
 ![GitHub top language](https://img.shields.io/github/languages/top/slothings/responsive-portfolio)
 
